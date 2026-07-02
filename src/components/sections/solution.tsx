@@ -51,36 +51,64 @@ export function SolutionSection() {
             </div>
           </div>
 
-          {/* Visual card */}
+          {/* Apple Wallet-style Memory card */}
           <div className="relative">
-            <div className="rounded-3xl border border-border bg-card p-8 shadow-xl">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white font-semibold text-sm">
-                  M
-                </div>
-                <div>
-                  <p className="font-medium text-sm">Memory saved</p>
-                  <p className="text-muted-foreground text-xs">Café Lisbon · 2 mins ago</p>
-                </div>
-                <span className="ml-auto text-xs px-2 py-1 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 font-medium">
-                  Private
-                </span>
-              </div>
+            {/* Stacked cards behind */}
+            <div className="absolute inset-0 translate-y-3 translate-x-2 rounded-3xl bg-gradient-to-br from-indigo-800/30 to-slate-900/30 border border-white/5" style={{ filter: "blur(1px)" }} />
+            <div className="absolute inset-0 translate-y-6 translate-x-4 rounded-3xl bg-gradient-to-br from-indigo-900/20 to-slate-900/20 border border-white/5" style={{ filter: "blur(1px)" }} />
 
-              <div className="space-y-3">
-                <div className="h-3 bg-muted rounded-full w-3/4" />
-                <div className="h-3 bg-muted rounded-full w-full" />
-                <div className="h-3 bg-muted rounded-full w-2/3" />
-              </div>
+            {/* Main card */}
+            <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-indigo-900/40">
+              {/* Card background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-[#1a1d3a] to-slate-900" />
+              {/* Sheen overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.08] via-transparent to-transparent" />
 
-              <div className="mt-6 pt-4 border-t border-border flex items-center justify-between text-xs text-muted-foreground">
-                <span>📍 Café A Brasileira, Lisbon</span>
-                <span>🔒 Only you can see this</span>
+              <div className="relative p-8">
+                {/* Card header */}
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-indigo-400" />
+                    <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-white/50">
+                      Memory
+                    </span>
+                  </div>
+                  <span className="text-[11px] px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 font-medium border border-emerald-500/20">
+                    Private
+                  </span>
+                </div>
+
+                {/* Main content */}
+                <div className="mb-8">
+                  <h3 className="text-white text-2xl font-light tracking-tight mb-1">
+                    Café A Brasileira
+                  </h3>
+                  <p className="text-white/40 text-sm">Lisbon, Portugal · June 2024</p>
+                </div>
+
+                {/* Memo placeholder lines */}
+                <div className="space-y-2.5 mb-8">
+                  <div className="h-1.5 rounded-full w-4/5" style={{ background: "rgba(255,255,255,0.07)" }} />
+                  <div className="h-1.5 rounded-full w-full" style={{ background: "rgba(255,255,255,0.07)" }} />
+                  <div className="h-1.5 rounded-full w-3/5" style={{ background: "rgba(255,255,255,0.07)" }} />
+                </div>
+
+                {/* Card footer */}
+                <div className="pt-5 flex items-center justify-between" style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+                  <div className="flex items-center gap-2">
+                    <span className="text-base">📍</span>
+                    <span className="text-white/35 text-xs">Only you can see this</span>
+                  </div>
+                  <div className="flex">
+                    <div className="w-6 h-6 rounded-full bg-white/8 border border-white/10" style={{ background: "rgba(255,255,255,0.06)" }} />
+                    <div className="w-6 h-6 rounded-full border border-white/10 -ml-2" style={{ background: "rgba(255,255,255,0.04)" }} />
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Floating badge */}
-            <div className="absolute -top-4 -right-4 bg-primary text-primary-foreground text-xs font-medium px-3 py-1.5 rounded-full shadow-lg shadow-primary/30">
+            <div className="absolute -top-3 -right-3 bg-primary text-primary-foreground text-xs font-medium px-3 py-1.5 rounded-full shadow-lg shadow-primary/30">
               No phone number needed
             </div>
           </div>
