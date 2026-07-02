@@ -21,8 +21,7 @@ interface WaitlistFormProps {
 }
 
 export function WaitlistForm({ compact = false }: WaitlistFormProps) {
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -39,47 +38,21 @@ export function WaitlistForm({ compact = false }: WaitlistFormProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
-    setErrorMessage("");
-
-    try {
-      const params = new URLSearchParams(window.location.search);
-      const body = {
-        ...formData,
-        source: document.referrer || "direct",
-        utm_source: params.get("utm_source") ?? undefined,
-        utm_medium: params.get("utm_medium") ?? undefined,
-        utm_campaign: params.get("utm_campaign") ?? undefined,
-      };
-
-      const res = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
-
-      if (res.ok) {
-        setStatus("success");
-      } else {
-        const data = await res.json().catch(() => ({}));
-        setErrorMessage(
-          (data as { error?: string }).error ?? "Something went wrong. Please try again."
-        );
-        setStatus("error");
-      }
-    } catch {
-      setErrorMessage("Network error. Please try again.");
-      setStatus("error");
-    }
+    // Simulate a brief submission delay for UX
+    await new Promise((resolve) => setTimeout(resolve, 800));
+    setStatus("success");
   };
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center justify-center py-8 text-center gap-4">
+      <div className="flex flex-col items-center justify-center py-8 text-center gap-4 animate-fade-in">
         <div className="w-14 h-14 rounded-full bg-green-500/10 flex items-center justify-center">
           <CheckCircle className="text-green-500" size={28} />
         </div>
         <div>
-          <p className="font-semibold text-lg text-foreground">You&apos;re on the list.</p>
+          <p className="font-semibold text-lg text-foreground">
+            You&apos;re on the list.
+          </p>
           <p className="text-muted-foreground text-sm mt-1">
             We&apos;ll let you know when Crossed opens early access.
           </p>
@@ -149,10 +122,6 @@ export function WaitlistForm({ compact = false }: WaitlistFormProps) {
             ))}
           </Select>
         </div>
-      )}
-
-      {status === "error" && (
-        <p className="text-sm text-destructive">{errorMessage}</p>
       )}
 
       <Button

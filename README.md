@@ -2,134 +2,77 @@
 
 **Where paths cross again.**
 
-Crossed is a privacy-first encounter memory app. It helps people save meaningful real-world encounters and reconnect later—only when both people choose.
+Crossed is a privacy-first encounter memory app. Save meaningful real-world encounters and reconnect later — only when both people choose.
 
-This repository contains the **web platform**: landing page, waitlist, marketing pages, admin panel, and API routes.
-
----
-
-## Tech Stack
-
-- **Next.js 14+** with App Router
-- **TypeScript**
-- **Tailwind CSS**
-- **Supabase** (database + auth)
-- **Resend** (email notifications, optional)
-- **Vercel** (deployment)
+This repository is the **web platform**: landing page, waitlist, and marketing pages.
 
 ---
 
-## Getting Started
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/your-org/crossed.git
-cd crossed
-```
-
-### 2. Install dependencies
+## Quick Start
 
 ```bash
 npm install
+npm run dev
 ```
 
-### 3. Set up environment variables
+Open [http://localhost:3000](http://localhost:3000).
 
-Copy the example file and fill in your values:
+No environment variables are required to run the landing page locally.
+
+---
+
+## Production Build
+
+```bash
+npm run build
+```
+
+The build produces a fully static-compatible Next.js site with no required backend services.
+
+---
+
+## Deploy to Vercel
+
+### Option A — Vercel CLI
+
+```bash
+npm i -g vercel
+vercel
+```
+
+Follow the prompts. No environment variables are needed for the phase 1 landing page.
+
+### Option B — GitHub Integration
+
+1. Push this repository to GitHub
+2. Go to [vercel.com/new](https://vercel.com/new)
+3. Import your repository
+4. Click **Deploy** — Vercel auto-detects Next.js settings
+
+That's it. The landing page will be live in ~30 seconds.
+
+---
+
+## Environment Variables (Optional)
+
+These are **not required** for the current phase. Copy `.env.example` when you're ready to add backend functionality:
 
 ```bash
 cp .env.example .env.local
 ```
 
-Required variables:
-
-| Variable | Description |
-|---|---|
-| `NEXT_PUBLIC_SUPABASE_URL` | Your Supabase project URL |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase anon (public) key |
-| `SUPABASE_SERVICE_ROLE_KEY` | Supabase service role key (server-side only) |
-| `RESEND_API_KEY` | Resend API key (optional, for email notifications) |
-| `ADMIN_EMAIL` | Admin notification email (optional) |
-| `NEXT_PUBLIC_SITE_URL` | Your production site URL (e.g. `https://crossedapp.co`) |
-
-### 4. Set up the Supabase database
-
-Run the SQL schema in your Supabase project:
-
-1. Go to your Supabase dashboard → SQL Editor
-2. Copy the contents of `supabase/schema.sql`
-3. Run the SQL
-
-### 5. Run the development server
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to see the site.
+| Variable | Required | Description |
+|---|---|---|
+| `NEXT_PUBLIC_SITE_URL` | Optional | Production URL for SEO metadata (e.g. `https://crossedapp.co`) |
+| `NEXT_PUBLIC_SUPABASE_URL` | Future | Supabase project URL |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Future | Supabase anon key |
+| `SUPABASE_SERVICE_ROLE_KEY` | Future | Supabase service role key |
+| `RESEND_API_KEY` | Future | Email notifications |
+| `ADMIN_EMAIL` | Future | Admin notification address |
 
 ---
 
-## Deployment on Vercel
-
-### 1. Push to GitHub
-
-Make sure your code is pushed to a GitHub repository.
-
-### 2. Import to Vercel
-
-1. Go to [vercel.com/new](https://vercel.com/new)
-2. Import your GitHub repository
-3. Vercel will auto-detect Next.js settings
-
-### 3. Add environment variables
-
-In the Vercel project settings, add all variables from `.env.example` with their values.
-
-### 4. Deploy
-
-Vercel will automatically deploy on every push to `main`.
-
----
-
-## Project Structure
-
-```
-src/
-├── app/                    # Next.js App Router pages
-│   ├── page.tsx            # Landing page
-│   ├── waitlist/           # Waitlist page
-│   ├── about/              # About page
-│   ├── features/           # Features page
-│   ├── use-cases/          # Use cases page
-│   ├── privacy/            # Privacy Policy
-│   ├── terms/              # Terms of Service
-│   ├── dashboard/          # Web dashboard (placeholder)
-│   ├── admin/              # Admin panel
-│   └── api/                # API routes
-│       ├── waitlist/       # POST /api/waitlist
-│       ├── contact/        # POST /api/contact
-│       └── admin/          # Protected admin routes
-│           ├── waitlist/   # GET /api/admin/waitlist
-│           └── export/     # GET /api/admin/export (CSV)
-├── components/
-│   ├── layout/             # Header, Footer
-│   ├── sections/           # Page sections
-│   └── ui/                 # Reusable UI components
-├── lib/
-│   ├── supabase/           # Supabase client, server, auth helpers
-│   └── utils.ts            # cn() utility
-└── types/
-    └── database.ts         # TypeScript types for Supabase schema
-
-supabase/
-└── schema.sql              # Database schema to run in Supabase
-```
-
----
-
-## Pages
+## Site Structure
 
 | Route | Description |
 |---|---|
@@ -137,44 +80,35 @@ supabase/
 | `/waitlist` | Waitlist sign-up page |
 | `/about` | Product story |
 | `/features` | Feature overview |
-| `/use-cases` | Use cases for various audiences |
-| `/privacy` | Privacy Policy |
-| `/terms` | Terms of Service |
-| `/dashboard` | Web dashboard placeholder |
-| `/admin` | Admin login |
-| `/admin/dashboard` | Admin waitlist management |
-
-## API Routes
-
-| Route | Method | Description |
-|---|---|---|
-| `/api/waitlist` | `POST` | Join the waitlist |
-| `/api/contact` | `POST` | Contact form submission |
-| `/api/admin/waitlist` | `GET` | Fetch all waitlist entries (auth required) |
-| `/api/admin/export` | `GET` | Export waitlist as CSV (auth required) |
+| `/use-cases` | Use cases |
+| `/privacy` | Privacy Policy (draft) |
+| `/terms` | Terms of Service (draft) |
+| `/dashboard` | Dashboard placeholder |
+| `/admin` | Admin placeholder |
 
 ---
 
-## Admin Panel
+## Tech Stack
 
-The admin panel at `/admin` requires Supabase authentication.
-
-To create an admin user:
-1. Go to your Supabase dashboard → Authentication → Users
-2. Create a new user with email/password
-3. Use those credentials to log in at `/admin`
+- **Next.js 14** with App Router
+- **TypeScript**
+- **Tailwind CSS**
+- **Vercel Analytics** (auto-enabled on Vercel)
 
 ---
 
-## Legal Pages
+## Phase Roadmap
 
-The Privacy Policy and Terms of Service at `/privacy` and `/terms` are **draft templates** that require review by a qualified legal professional before the app launches publicly.
+- **Phase 1 (current):** Landing page, waitlist form, marketing pages — no backend
+- **Phase 2:** Supabase integration, real waitlist persistence, contact form
+- **Phase 3:** Admin panel, CSV export, email notifications
+- **Phase 4:** Mobile app launch, user dashboard
 
 ---
 
-## Contributing
+## Legal
 
-This is a private project. Contributions are by invite only.
+Privacy Policy and Terms of Service at `/privacy` and `/terms` are **draft templates** and require review by a qualified legal professional before launch.
 
 ---
 

@@ -2,7 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import { createSupabaseAdmin } from "@/lib/supabase/server";
 
 function isValidEmail(email: string): boolean {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  if (email.includes(" ") || email.includes("\t")) return false;
+  const at = email.indexOf("@");
+  if (at < 1) return false;
+  const domain = email.slice(at + 1);
+  const dot = domain.lastIndexOf(".");
+  return dot > 0 && dot < domain.length - 1 && !domain.includes("@");
 }
 
 export async function POST(request: NextRequest) {
