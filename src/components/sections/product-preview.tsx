@@ -48,7 +48,7 @@ const FRAME = {
   hbX: 80, hbY: 428, hbW: 60, hbH: 4,
 };
 
-function FrameChrome({ uid }: { uid: string }) {
+function FrameChrome({ uid: _uid }: { uid: string }) {
   return (
     <>
       {/* Outer bezel */}
@@ -109,7 +109,7 @@ function Screen1() {
         <text x="16" y="226" fontFamily="system-ui" fontSize="24" fontWeight="700" fill="rgba(255,255,255,0.95)" letterSpacing="-0.5">paths cross</text>
         <text x="16" y="254" fontFamily="system-ui" fontSize="24" fontWeight="700" fill="rgba(255,255,255,0.95)" letterSpacing="-0.5">again.</text>
         {/* Sub */}
-        <text x="16" y="275" fontFamily="system-ui" fontSize="9" fill="rgba(255,255,255,0.4)">Don't lose meaningful encounters.</text>
+        <text x="16" y="275" fontFamily="system-ui" fontSize="9" fill="rgba(255,255,255,0.4)">Don&apos;t lose meaningful encounters.</text>
         {/* Primary CTA */}
         <rect x="16" y="342" width="188" height="36" rx="18" fill="rgba(255,255,255,0.93)" />
         <text x="110" y="365" fontFamily="system-ui" fontSize="11" fontWeight="600" fill="#0a0814" textAnchor="middle">Create a Memory</text>
@@ -384,7 +384,7 @@ function Screen5() {
         <rect x="16" y="260" width="188" height="1" fill="rgba(255,255,255,0.06)" />
         {/* Message field */}
         <rect x="16" y="270" width="188" height="70" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.07)" strokeWidth="1" />
-        <text x="26" y="290" fontFamily="system-ui" fontSize="9" fill="rgba(255,255,255,0.6)">Hey! I've been thinking about</text>
+        <text x="26" y="290" fontFamily="system-ui" fontSize="9" fill="rgba(255,255,255,0.6)">Hey! I&apos;ve been thinking about</text>
         <text x="26" y="304" fontFamily="system-ui" fontSize="9" fill="rgba(255,255,255,0.6)">our conversation. Would love</text>
         <text x="26" y="318" fontFamily="system-ui" fontSize="9" fill="rgba(255,255,255,0.6)">to reconnect.</text>
         {/* Add message hint */}
@@ -433,7 +433,7 @@ function Screen6() {
         {/* Checkmark */}
         <path d="M96,165 L106,175 L124,154" stroke="rgba(255,255,255,0.95)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
         {/* It's mutual! */}
-        <text x="110" y="224" fontFamily="system-ui" fontSize="18" fontWeight="700" fill="rgba(255,255,255,0.95)" textAnchor="middle">It's mutual!</text>
+        <text x="110" y="224" fontFamily="system-ui" fontSize="18" fontWeight="700" fill="rgba(255,255,255,0.95)" textAnchor="middle">It&apos;s mutual!</text>
         <text x="110" y="242" fontFamily="system-ui" fontSize="9" fill="rgba(255,255,255,0.4)" textAnchor="middle">You can now start a conversation.</text>
         {/* Avatars */}
         <circle cx="78" cy="282" r="22" fill="rgba(30,32,60,0.9)" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
