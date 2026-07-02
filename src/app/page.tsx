@@ -7,6 +7,7 @@ import { FeaturesSection } from "@/components/sections/features";
 import { UseCasesSection } from "@/components/sections/use-cases";
 import { PrivacySection } from "@/components/sections/privacy-first";
 import { WaitlistCTASection } from "@/components/sections/waitlist-cta";
+import { WhyCrossedSection } from "@/components/sections/why-crossed";
 
 export default function HomePage() {
   return (
@@ -20,6 +21,7 @@ export default function HomePage() {
       <UseCasesSection />
       <PrivacySection />
       <WaitlistCTASection />
+      <WhyCrossedSection />
     </>
   );
 }
