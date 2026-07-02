@@ -68,6 +68,9 @@ export function UseCasesSection() {
               Crossed is made for the people you unexpectedly meet—and never wanted to lose.
             </span>
           </p>
+          <p className="text-foreground text-base md:text-lg font-medium mt-4">
+            If you&apos;ve ever met someone you wished you hadn&apos;t lost, Crossed is for you.
+          </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">

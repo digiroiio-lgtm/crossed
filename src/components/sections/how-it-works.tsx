@@ -31,7 +31,7 @@ export function HowItWorksSection() {
             How It Works
           </div>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            Three steps. Total privacy.
+            Meet. Remember. Reconnect.
           </h2>
           <p className="text-muted-foreground text-lg">
             Crossed is designed to be as simple and low-pressure as possible.

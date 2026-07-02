@@ -64,7 +64,7 @@ export function FeaturesSection() {
             Everything you need. Nothing you don&apos;t.
           </h2>
           <p className="text-muted-foreground text-lg">
-            Crossed is built with privacy at the core—and simplicity at the surface.
+            Designed for real-world encounters—not endless scrolling.
           </p>
         </div>
 

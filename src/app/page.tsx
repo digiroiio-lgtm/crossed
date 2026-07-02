@@ -8,6 +8,7 @@ import { UseCasesSection } from "@/components/sections/use-cases";
 import { PrivacySection } from "@/components/sections/privacy-first";
 import { WaitlistCTASection } from "@/components/sections/waitlist-cta";
 import { WhyCrossedSection } from "@/components/sections/why-crossed";
+import { FinalNoteSection } from "@/components/sections/final-note";
 
 export default function HomePage() {
   return (
@@ -22,6 +23,7 @@ export default function HomePage() {
       <PrivacySection />
       <WaitlistCTASection />
       <WhyCrossedSection />
+      <FinalNoteSection />
     </>
   );
 }

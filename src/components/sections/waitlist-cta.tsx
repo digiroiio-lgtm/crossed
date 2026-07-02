@@ -10,7 +10,7 @@ export function WaitlistCTASection() {
               Early Access
             </div>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-              Be among the first to cross paths again.
+              Join the first people building a new way to reconnect.
             </h2>
             <p className="text-muted-foreground text-lg">
               Join the waitlist and get early access when Crossed launches.
