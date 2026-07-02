@@ -59,7 +59,7 @@ export function HeroSection() {
 
           {/* Social proof */}
           <p className="mt-10 text-xs text-muted-foreground">
-            Privacy-first · No phone numbers · Mutual consent
+            Private by default · No phone numbers · Mutual consent
           </p>
         </div>
       </div>

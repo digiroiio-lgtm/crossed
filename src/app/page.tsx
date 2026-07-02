@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/sections/hero";
+import { BuiltForMomentsSection } from "@/components/sections/built-for-moments";
 import { ImagineSection } from "@/components/sections/imagine";
 import { ProblemSection } from "@/components/sections/problem";
 import { SolutionSection } from "@/components/sections/solution";
@@ -14,6 +15,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <BuiltForMomentsSection />
       <ImagineSection />
       <ProblemSection />
       <SolutionSection />

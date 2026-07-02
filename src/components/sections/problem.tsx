@@ -30,9 +30,8 @@ export function ProblemSection() {
             Most meaningful encounters disappear.
           </h2>
           <p className="text-muted-foreground text-lg">
-            People meet interesting strangers while traveling, working, attending events,
-            sitting in cafés or joining communities. Most of those people disappear
-            forever.
+            A conversation on a train. Someone you met at a café. A founder after a
+            conference. A traveler on the same journey. Then life moves on.
           </p>
         </div>
 

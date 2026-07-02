@@ -18,7 +18,7 @@ export function ImagineSection() {
               Imagine
             </p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              Feel the moment before it fades.
+              Not every meaningful encounter should become a memory.
             </h2>
           </div>
 
