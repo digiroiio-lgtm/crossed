@@ -48,7 +48,7 @@ const FRAME = {
   hbX: 80, hbY: 428, hbW: 60, hbH: 4,
 };
 
-function FrameChrome({ uid: _uid }: { uid: string }) {
+function FrameChrome() {
   return (
     <>
       {/* Outer bezel */}
@@ -92,7 +92,7 @@ function Screen1() {
           <stop offset="100%" stopColor="#c87820" stopOpacity="0" />
         </radialGradient>
       </defs>
-      <FrameChrome uid="s1" />
+      <FrameChrome />
       <rect x={FRAME.screenX} y={FRAME.screenY} width={FRAME.screenW} height={FRAME.screenH} rx={FRAME.screenRx} fill="url(#s1bg)" />
       <g clipPath="url(#s1c)">
         <rect x={FRAME.screenX} y={FRAME.screenY} width={FRAME.screenW} height={FRAME.screenH} fill="url(#s1bg)" />
@@ -143,7 +143,7 @@ function Screen2() {
           <stop offset="100%" stopColor="#d28432" stopOpacity="0" />
         </radialGradient>
       </defs>
-      <FrameChrome uid="s2" />
+      <FrameChrome />
       <rect x={FRAME.screenX} y={FRAME.screenY} width={FRAME.screenW} height={FRAME.screenH} rx={FRAME.screenRx} fill="url(#s2bg)" />
       <g clipPath="url(#s2c)">
         <rect x={FRAME.screenX} y={FRAME.screenY} width={FRAME.screenW} height={FRAME.screenH} fill="url(#s2bg)" />
@@ -201,7 +201,7 @@ function Screen3() {
           <rect x={FRAME.screenX} y={FRAME.screenY} width={FRAME.screenW} height={FRAME.screenH} rx={FRAME.screenRx} />
         </clipPath>
       </defs>
-      <FrameChrome uid="s3" />
+      <FrameChrome />
       <rect x={FRAME.screenX} y={FRAME.screenY} width={FRAME.screenW} height={FRAME.screenH} rx={FRAME.screenRx} fill="#0d0d16" />
       <g clipPath="url(#s3c)">
         <rect x={FRAME.screenX} y={FRAME.screenY} width={FRAME.screenW} height={FRAME.screenH} fill="#0d0d16" />
@@ -264,7 +264,7 @@ function Screen4() {
           <stop offset="100%" stopColor="#6366f1" stopOpacity="0" />
         </radialGradient>
       </defs>
-      <FrameChrome uid="s4" />
+      <FrameChrome />
       <rect x={FRAME.screenX} y={FRAME.screenY} width={FRAME.screenW} height={FRAME.screenH} rx={FRAME.screenRx} fill="#080c14" />
       <g clipPath="url(#s4c)">
         <rect x={FRAME.screenX} y={FRAME.screenY} width={FRAME.screenW} height={FRAME.screenH} fill="#080c14" />
@@ -360,7 +360,7 @@ function Screen5() {
           <stop offset="100%" stopColor="#6366f1" />
         </linearGradient>
       </defs>
-      <FrameChrome uid="s5" />
+      <FrameChrome />
       <rect x={FRAME.screenX} y={FRAME.screenY} width={FRAME.screenW} height={FRAME.screenH} rx={FRAME.screenRx} fill="#0d0d18" />
       <g clipPath="url(#s5c)">
         <rect x={FRAME.screenX} y={FRAME.screenY} width={FRAME.screenW} height={FRAME.screenH} fill="#0d0d18" />
@@ -419,7 +419,7 @@ function Screen6() {
           <stop offset="100%" stopColor="#047857" />
         </radialGradient>
       </defs>
-      <FrameChrome uid="s6" />
+      <FrameChrome />
       <rect x={FRAME.screenX} y={FRAME.screenY} width={FRAME.screenW} height={FRAME.screenH} rx={FRAME.screenRx} fill="url(#s6bg)" />
       <g clipPath="url(#s6c)">
         <rect x={FRAME.screenX} y={FRAME.screenY} width={FRAME.screenW} height={FRAME.screenH} fill="url(#s6bg)" />
